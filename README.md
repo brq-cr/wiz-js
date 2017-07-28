@@ -1,2 +1,2 @@
 # wiz-js
-Reactive framework for bot building 
+Reactive framework for bot development
