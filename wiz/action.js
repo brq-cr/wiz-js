@@ -24,7 +24,7 @@ class BotAction {
     getAction(ctx) {
         return new Promise((resolve) => {
             this.iterate(this.rules, ctx, (action) => {
-                // TODO: This needs to be improved :/
+                // Reset action || TODO: This needs to be improved :/
                 this.action = undefined;
                 resolve(action);
             });

@@ -48,7 +48,7 @@ class Wiz {
         return providersWithContext;
     }
 
-    AnswersObservableFromAction({ action, filteredCtx, providers }) {
+    answersObservableFromAction({ action, filteredCtx, providers }) {
         return Rx.Observable.create(async (observer) => {
             try {
                 const botResponse = await action(filteredCtx, providers);
@@ -79,7 +79,7 @@ class Wiz {
                 this.addContextToProviders(this.providers, filteredCtx),
             ))
             .filter(({ action }) => typeof action === 'function')
-            .switchMap(({ action, filteredCtx, providers }) => this.AnswersObservableFromAction({
+            .switchMap(({ action, filteredCtx, providers }) => this.answersObservableFromAction({
                 action,
                 filteredCtx,
                 providers,
