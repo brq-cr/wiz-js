@@ -1,6 +1,8 @@
 class Provider {
     context(ctx) {
-        if(ctx) { this.ctx = ctx; }
+        if (ctx) { this.ctx = ctx; }
         return this.ctx;
     }
 }
+
+export default Provider;

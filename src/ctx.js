@@ -1,5 +1,4 @@
 class Context {
-    
     constructor(ctx) {
         this.ctx = Object.assign({}, {
             actions: [],

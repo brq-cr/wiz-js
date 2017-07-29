@@ -1,9 +1,8 @@
 class BotAction {
-
     constructor(rules) {
         this.rules = rules;
         this.action = undefined;
-         // TODO : Improve iteration XD
+        // TODO : Improve iteration XD
         this.iterate = function iterate(iterateRules, ctx, callback) {
             iterateRules.reverse();
             for (let i = 0; i < iterateRules.length; i += 1) {
@@ -19,8 +18,6 @@ class BotAction {
             callback(this.action);
         };
     }
-
-
     getAction(ctx) {
         return new Promise((resolve) => {
             this.iterate(this.rules, ctx, (action) => {
@@ -30,6 +27,5 @@ class BotAction {
             });
         });
     }
-
 }
 export default BotAction;

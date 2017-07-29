@@ -85,7 +85,7 @@ class Wiz {
                 providers,
             }))
             .map(answer => this.forceArray(answer))
-            .switchMap(answerArray => Rx.Observable.from(answerArray))
+            .switchMap(answerArray => Rx.Observable.from(answerArray));
     }
 }
 module.exports = Wiz;

@@ -1,0 +1,42 @@
+{
+  "name": "wiz-js",
+  "version": "0.0.1",
+  "description": "Reactive framework for bot development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf lib/* && babel src --out-dir lib --copy-files",
+    "lint": "eslint src/**",
+    "watch": "nodemon src/index.js --exec babel-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brq-cr/wiz-js.git"
+  },
+  "keywords": [
+    "bot",
+    "framework"
+  ],
+  "author": "Bryan Ramirez <b.rq@me.com> (https://wiz.godel.la)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brq-cr/wiz-js/issues"
+  },
+  "homepage": "https://github.com/brq-cr/wiz-js#readme",
+  "dependencies": {
+    "rxjs": "^5.4.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-runtime": "^6.25.0",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "nodemon": "^1.11.0"
+  }
+}
