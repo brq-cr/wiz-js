@@ -33,17 +33,15 @@ class Wiz {
         });
     }
 
-    getFunctionName(fun) {
-        let ret = fun.toString();
-        ret = ret.substr('function '.length);
-        ret = ret.substr(0, ret.indexOf('('));
-        return ret;
+    getProviderName(provider) {
+        return provider.constructor.name;
     }
 
     addContextToProviders(providers, ctx) {
         const providersWithContext = {};
         for (let i = 0; i < providers.length; i += 1) {
-            providersWithContext[this.getFunctionName(providers[i])] = providers[i].context(ctx);
+            providers[i].context(ctx);
+            providersWithContext[this.getProviderName(providers[i])] = providers[i];
         }
         return providersWithContext;
     }
