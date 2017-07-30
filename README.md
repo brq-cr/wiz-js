@@ -5,10 +5,12 @@ Reactive framework for bot development
 
 ## Example of use
 
-```
-import { Wiz, Context, Provider, Action } from 'wiz-js';
+npm install wiz-js --save
 
-function someContext(ctx, next) {
+```
+const { Wiz, Action, Context, Provider } = require('wiz-js');
+
+function setActionContext(ctx, next) {
     ctx.pushAction('HELLO_WORLD');
     next();
 }
@@ -36,13 +38,13 @@ const HELLO_WORLD = new Action([
 
 const wiz = new Wiz({
     middlewares: [
-        someContext,
+        setActionContext,
     ],
     actions: [
         HELLO_WORLD,
     ],
     providers: [
-        new MyProvider('273jsyja8s8112'),
+        new MyProvider('MyConfigurationValues-1283628192hd82'),
     ],
 });
 
