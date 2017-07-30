@@ -5,7 +5,7 @@ Reactive framework for bot development
 
 ## Example of use
 
-npm install wiz-js --save
+**npm install wiz-js --save**
 
 ```
 const { Wiz, Action, Context, Provider } = require('wiz-js');
