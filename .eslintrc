@@ -11,6 +11,7 @@
     "generator-star-spacing": 0,
     "no-plusplus": 0,
     "indent": ["error", 4],
-    "class-methods-use-this": 0
+    "class-methods-use-this": 0,
+    "no-unused-expressions": 0
   }
 }

@@ -1,52 +1,51 @@
 class Context {
-    constructor(ctx) {
-        this.ctx = Object.assign({}, {
-            actions: [],
-        }, ctx);
+    constructor({ input }) {
+        this.input = input;
+        this.actions = [];
     }
 
-    input() {
-        return this.ctx.input;
+    getInput() {
+        return this.input;
     }
 
     getActions() {
-        return this.ctx.actions;
+        return this.actions;
     }
 
     pushAction(actions) {
-        this.ctx.actions.push(actions);
-        return this.ctx.actions;
+        this.actions.push(actions);
+        return this.actions;
     }
 
     get(attr, subContext) {
         let value = null;
         if (subContext) {
-            value = this.ctx[subContext] ? this.ctx[subContext][attr] : null;
+            value = this[subContext] ? this[subContext][attr] : null;
         } else {
-            value = this.ctx[attr] || null;
+            value = this[attr] || null;
         }
         return value;
     }
 
     set(attr, val, subContext) {
         if (typeof val === 'object' && subContext) {
-            if (!this.ctx[subContext]) {
-                this.ctx[subContext] = {};
-                this.ctx[subContext][attr] = {};
+            if (!this[subContext]) {
+                this[subContext] = {};
+                this[subContext][attr] = {};
             }
-            this.ctx[subContext][attr] = Object.assign(this.ctx[subContext][attr], val);
+            this[subContext][attr] = Object.assign(this[subContext][attr], val);
         } else if (typeof val === 'object' && !subContext) {
-            if (!this.ctx[attr]) {
-                this.ctx[attr] = {};
+            if (!this[attr]) {
+                this[attr] = {};
             }
-            this.ctx[attr] = Object.assign(this.ctx[attr], val);
+            this[attr] = Object.assign(this[attr], val);
         } else if (subContext) {
-            if (!this.ctx[subContext]) {
-                this.ctx[subContext] = {};
+            if (!this[subContext]) {
+                this[subContext] = {};
             }
-            this.ctx[subContext][attr] = val;
+            this[subContext][attr] = val;
         } else {
-            this.ctx[attr] = val;
+            this[attr] = val;
         }
         return val;
     }
@@ -55,7 +54,7 @@ class Context {
         const [subContext, attr] = contextExpresion.split(':');
         let value = null;
         if (subContext === 'action') {
-            value = this.ctx.actions.indexOf(attr) >= 0;
+            value = this.actions.indexOf(attr) >= 0;
         } else {
             value = this.get(attr, subContext) || null;
         }

@@ -4,7 +4,7 @@
   "description": "Reactive framework for bot development",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha",
+    "test": "rm -rf lib/* && babel src --out-dir lib --copy-files && ./node_modules/mocha/bin/mocha",
     "build": "rm -rf lib/* && babel src --out-dir lib --copy-files",
     "lint": "eslint src/**",
     "watch": "nodemon src/index.js --exec babel-node"
