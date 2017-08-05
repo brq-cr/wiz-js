@@ -4,7 +4,7 @@
   "description": "Reactive framework for bot development",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/mocha/bin/mocha",
     "build": "rm -rf lib/* && babel src --out-dir lib --copy-files",
     "lint": "eslint src/**",
     "watch": "nodemon src/index.js --exec babel-node"
@@ -32,11 +32,13 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.24.1",
     "babel-runtime": "^6.25.0",
+    "chai": "^4.1.0",
     "eslint": "^4.3.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
+    "mocha": "^3.5.0",
     "nodemon": "^1.11.0"
   }
 }
